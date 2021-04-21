@@ -8,7 +8,9 @@ public class AppEntryPoint implements EntryPoint {
 	public void onModuleLoad() {
 		// Do nothing, just to load the Java classes
 		Calculator calculator = new Calculator();
+		calculator.setValue(10);
 		calculator.setValue(10F);
+
 		CalculatorNoExport calculatorNoExport = new CalculatorNoExport();
 		calculatorNoExport.setValue(10);
 		calculatorNoExport.setValue(10F);

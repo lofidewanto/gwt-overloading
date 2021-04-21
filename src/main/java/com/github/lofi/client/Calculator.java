@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
 
+import jsinterop.annotations.JsIgnore;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
 
@@ -36,10 +37,11 @@ public class Calculator {
 	}
 
 	// Overloading does not work because we export the class with @JsType
-	/*
+	// Use @JsIgnore to not export this
+	@JsIgnore
 	public void setValue(Integer value) {
+		logger.info("set Integer: " + value);
 		this.value = value.floatValue();
 	}
-	*/
 
 }
