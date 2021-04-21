@@ -4,18 +4,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
 
-import jsinterop.annotations.JsPackage;
-import jsinterop.annotations.JsType;
+public class CalculatorNoExport {
 
-@JsType(namespace = JsPackage.GLOBAL)
-public class Calculator {
-
-	private static Logger logger = Logger.getLogger(Calculator.class.getName());
+	private static Logger logger = Logger.getLogger(CalculatorNoExport.class.getName());
 
 	private Float value;
 
-	public Calculator() {
-		logger.info("Calculator...");
+	public CalculatorNoExport() {
+		logger.info("CalculatorNoExport...");
 	}
 
 	public double calculateSum(Double[] values) {
@@ -35,11 +31,10 @@ public class Calculator {
 		this.value = value;
 	}
 
-	// Overloading does not work because we export the class with @JsType
-	/*
+	// Overloading works because we don't export the class with @JsType
 	public void setValue(Integer value) {
+		logger.info("set Integer: " + value);
 		this.value = value.floatValue();
 	}
-	*/
 
 }
